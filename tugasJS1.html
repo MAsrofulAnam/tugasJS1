@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tugas javascript</title>
+</head>
+<body bgcolor="F9F7C9">
+    <script>
+        let pegawai = "Ridwan";
+        let jabatan = "Manager";
+        let status = "Menikah";
+        let gajipokok;
+    
+        if(jabatan === "Manager"){
+            gajipokok = 15000000;
+        }
+        else if (jabatan === "Asisten"){
+            gajipokok = 10000000;
+        }
+        else if (jabatan === "Staff"){
+            gajipokok = 5000000;
+        }
+        else{
+            gajipokok = 0;
+        }
+
+    
+    let tunjanganjabatan = 0.15 * gajipokok;
+    let tunjanganBpjs = 0.1 * gajipokok;
+    let tunjangankeluarga = status === "Menikah" ? 0.2 * gajipokok : 0;
+
+    let totaltunjangan = tunjanganjabatan + tunjanganBpjs + tunjangankeluarga;
+    let totalgaji = totaltunjangan + gajipokok;
+    
+
+    const html = `<center>
+        <h2>***** Table Pegawai *****</h2>
+    <table border="1" width="60%">
+        <thead>
+            <tr bgcolor = "AAD9BB">
+                <th>Nama pegawai</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>Bpjs</th>
+                <th>Tunjangan Keluarga</th>
+                <th>Total Gaji</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align = "center" bgcolor ="white">
+                <td>${pegawai}</td>
+                <td>${jabatan}</td>
+                <td>${status}</td>
+                <td>${gajipokok}</td>
+                <td>${tunjanganjabatan}</td>
+                <td>${tunjanganBpjs}</td>
+                <td>${tunjangankeluarga}</td>
+                <td>${totalgaji}</td>
+            </tr>
+            <tr align = "center" bgcolor ="white">
+                <td colspan = "7">Gaji Pokok</td>
+                <td>${totalgaji}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    </center>`;
+
+    document.write(html);
+    </script>
+</body>
+</html>
